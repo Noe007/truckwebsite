@@ -17,8 +17,23 @@ router.get('/vehicle/:productId', function (req, res, next) {
     // .Results.DisplayName
 
     res.render('pages/vehicle', {
-      title: 'Express',
-      vehicle: vehicle
+      vehicle: vehicle,
+      ampLink :req.protocol + '://' + req.get('host') + "/amp"+req.originalUrl
+    });
+  });
+
+
+});
+
+/* GET single vehicle page. */
+router.get('/amp/vehicle/:productId', function (req, res, next) {
+  uvsApi.getVehicle(req.params.productId, function(item){
+    let vehicle = item.Data.Results.Results.Results[0]
+    // .Results.DisplayName
+
+    res.render('pages/vehicle', {
+      vehicle: vehicle,
+      ampLink :req.protocol + '://' + req.get('host') + "/amp"+req.originalUrl
     });
   });
 
