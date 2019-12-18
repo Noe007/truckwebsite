@@ -7,7 +7,42 @@
 </head>
 
 <body>
-  <h1>Vehicle: <%= vehicle.ProductId %></h1>
+    <h1>Vehicle: <%= vehicle.ProductId %></h1>
+
+    <ul>
+        <li>
+            <a href="/">
+               Home
+            </a>
+        </li>
+        <li>
+            <a href="/vehicle/540981">
+                Vehicle 540981
+            </a>
+        </li>
+        <li>
+            <a href="/vehicles">
+                All vehicles
+            </a>
+        </li>
+        <li>
+            <a href="/vehicles?itemsPerPage=40&pageNumber=2">
+                All vehicles (with paging)
+            </a>
+        </li>
+        <li>
+
+            <a href="/location/123">
+                Location 123
+            </a>
+        </li>
+        <li>
+            <a href="/locations">
+                All locations
+            </a>
+
+        </li>
+        </ul>
 
   <div class="box">
 

@@ -5,7 +5,7 @@ let uvsApi = require('../private_modules/uvs_api/uvsApi')
 /* GET single vehicle page. */
 router.get('/', function (req, res, next) {
   res.render('pages/index', {
-    title: 'Express'
+    title: 'Rtrucks'
   });
 });
 

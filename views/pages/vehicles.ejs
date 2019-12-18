@@ -7,18 +7,55 @@
 </head>
 <h1> <%= count %> vehicles</h1>
 <body>
-
+        <ul>
+                <li>
+                    <a href="/">
+                       Home
+                    </a>
+                </li>
+                <li>
+                    <a href="/vehicle/540981">
+                        Vehicle 540981
+                    </a>
+                </li>
+                <li>
+                    <a href="/vehicles">
+                        All vehicles
+                    </a>
+                </li>
+                <li>
+                    <a href="/vehicles?itemsPerPage=40&pageNumber=2">
+                        All vehicles (with paging)
+                    </a>
+                </li>
+                <li>
+        
+                    <a href="/location/123">
+                        Location 123
+                    </a>
+                </li>
+                <li>
+                    <a href="/locations">
+                        All locations
+                    </a>
+        
+                </li>
+                </ul>
         <div class="box">
 <% 
 vehicles
 .forEach(function(drink) { %>
 
     <div>
-        <img class="img-grid" src="<%= JSON.parse(drink.ImagesJson) %>"> </img>
-        <pre>
-                <%= JSON.stringify(JSON.parse(drink.ImagesJson)[1].URL) %>
-        </pre>
-        <a href="/vehicle/<%= drink.ProductId %>"> <%= drink.ProductId %></a>
+            <a href="/vehicle/<%= drink.ProductId %>">      
+        <% 
+        JSON.parse(drink.ImagesJson)
+        .some(function(drink) { %>
+      <div>
+        <img class="img-grid" src="<%= drink.URL %>"> </img>
+      </div>
+      <% return true; }); %>
+ <h3> <%= drink.ManufacturerName + " "  + drink.Model %></a> </h3>
           </div>
 <% }); %>
 </div>
@@ -30,11 +67,11 @@ vehicles
         }
     
         .box>* {
-          flex: 1 1 100px;
+          flex: 1 1 200px;
         }
     
         .img-grid {
-          height: 100px;
+          height: 200px;
         }
       </style>
 
