@@ -1,0 +1,6 @@
+{
+    "vehicleApi": {
+        "vehicle":  "https://dev-cm-usedtrucks.new.ryder.com/api/vehicles?keyword=",
+        "vehicles": "https://dev-cm-usedtrucks.new.ryder.com/api/vehicles?itemsPerPage=ITEMS_PER_PAGE&Page=PAGE_NUMBER"
+    }
+}

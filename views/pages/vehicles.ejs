@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vehicles</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<h1> <%= count %> vehicles</h1>
+<body>
+
+        <div class="box">
+<% 
+vehicles
+.forEach(function(drink) { %>
+
+    <div>
+        <img class="img-grid" src="<%= JSON.parse(drink.ImagesJson) %>"> </img>
+        <pre>
+                <%= JSON.stringify(JSON.parse(drink.ImagesJson)[1].URL) %>
+        </pre>
+        <a href="/vehicle/<%= drink.ProductId %>"> <%= drink.ProductId %></a>
+          </div>
+<% }); %>
+</div>
+
+<style>
+        .box {
+          display: flex;
+          flex-wrap: wrap;
+        }
+    
+        .box>* {
+          flex: 1 1 100px;
+        }
+    
+        .img-grid {
+          height: 100px;
+        }
+      </style>
+
+</body>
+</html>
